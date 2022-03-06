@@ -1,36 +1,39 @@
 package models
 
 import (
+	"gorm.io/gorm"
+	"gorm.io/gorm/clause"
 	"time"
 )
 
 type Comment struct {
-	Id      int
-	Content string
-	Time    time.Time
-	Parent  int
-	State   int
-	User    *User `orm:"rel(fk)"`
+	ID        uint           `gorm:"primarykey"`
+	CreatedAt time.Time      `gorm:""`
+	UpdatedAt time.Time      `gorm:"" json:"-"`
+	DeletedAt gorm.DeletedAt `gorm:"index" json:"-"`
+	Content   string         `gorm:""`
+	Time      time.Time      `gorm:"" json:"-"`
+	Replies   []*Comment     `gorm:"foreignkey:Parent"`
+	Parent    int            `gorm:""`
+	State     int            `gorm:"" json:"-"`
+	UserID    uint           `gorm:"" json:"-"`
+	VideoID   uint           `gorm:"" json:"-"`
 }
 
-func (c *Comment) Add() error {
-	id, err := o.Insert(c)
-	if err != nil {
-		c.Id = int(id)
-	}
-	return err
+func (c *Comment) Check() (exist bool, err error) {
+	var count int64
+	err = o.Model(&Comment{}).Where("id", c.ID).Count(&count).Error
+	return count > 0, err
 }
 
-func (c *Comment) Get() error {
-	return o.Read(c)
+func (c *Comment) Query() error {
+	return o.First(c, c.ID).Error
 }
 
-func (c *Comment) Set() error {
-	_, err := o.Update(c)
-	return err
+func (c *Comment) Update() error {
+	return o.Save(c).Error
 }
 
-func (c *Comment) Del() error {
-	_, err := o.Delete(c)
-	return err
+func (c *Comment) Delete() error {
+	return o.Select(clause.Associations).Delete(c).Error
 }
