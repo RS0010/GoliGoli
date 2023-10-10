@@ -2,10 +2,9 @@ module GoliGoli
 
 go 1.17
 
-require github.com/beego/beego/v2 v2.0.2
+require github.com/beego/beego/v2 v2.0.4
 
 require (
-	github.com/deckarep/golang-set v1.8.0
 	github.com/mattn/go-sqlite3 v2.0.3+incompatible
 	github.com/smartystreets/goconvey v1.6.4
 	golang.org/x/crypto v0.0.0-20211108221036-ceb1ce70b4fa
@@ -27,11 +26,12 @@ require (
 	github.com/kr/text v0.2.0 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect
 	github.com/mitchellh/mapstructure v1.4.3 // indirect
+	github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e // indirect
 	github.com/pkg/errors v0.9.1 // indirect
-	github.com/prometheus/client_golang v1.11.0 // indirect
+	github.com/prometheus/client_golang v1.12.1 // indirect
 	github.com/prometheus/client_model v0.2.0 // indirect
-	github.com/prometheus/common v0.26.0 // indirect
-	github.com/prometheus/procfs v0.6.0 // indirect
+	github.com/prometheus/common v0.32.1 // indirect
+	github.com/prometheus/procfs v0.7.3 // indirect
 	github.com/shiena/ansicolor v0.0.0-20200904210342-c7312218db18 // indirect
 	github.com/smartystreets/assertions v0.0.0-20180927180507-b2de0cb4f26d // indirect
 	golang.org/x/net v0.0.0-20211015210444-4f30a5c0130f // indirect
