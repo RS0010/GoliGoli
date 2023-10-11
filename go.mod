@@ -5,10 +5,9 @@ go 1.17
 require github.com/beego/beego/v2 v2.0.2
 
 require (
-	github.com/deckarep/golang-set v1.8.0
 	github.com/mattn/go-sqlite3 v2.0.3+incompatible
 	github.com/smartystreets/goconvey v1.6.4
-	golang.org/x/crypto v0.0.0-20211108221036-ceb1ce70b4fa
+	golang.org/x/crypto v0.14.0
 	google.golang.org/protobuf v1.27.1
 	gorm.io/driver/sqlite v1.3.1
 	gorm.io/gorm v1.23.1
@@ -34,9 +33,9 @@ require (
 	github.com/prometheus/procfs v0.6.0 // indirect
 	github.com/shiena/ansicolor v0.0.0-20200904210342-c7312218db18 // indirect
 	github.com/smartystreets/assertions v0.0.0-20180927180507-b2de0cb4f26d // indirect
-	golang.org/x/net v0.0.0-20211015210444-4f30a5c0130f // indirect
-	golang.org/x/sys v0.0.0-20220227234510-4e6760a101f9 // indirect
-	golang.org/x/text v0.3.7 // indirect
+	golang.org/x/net v0.17.0 // indirect
+	golang.org/x/sys v0.13.0 // indirect
+	golang.org/x/text v0.13.0 // indirect
 	gopkg.in/check.v1 v1.0.0-20200902074654-038fdea0a05b // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
